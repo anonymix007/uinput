@@ -138,11 +138,11 @@ import "github.com/ThomasT75/uinput"
 
 func main() {
     // initialization of the gamepad device requires a vendor id and a product id
-	gamepad, err := uinput.CreateGamepad("/dev/uinput", []byte("test gamepad"), 0xDEAD, 0xBEEF)
+    gamepad, err := uinput.CreateGamepad("/dev/uinput", []byte("test gamepad"), 0xDEAD, 0xBEEF)
     if err != nil {
         return
     }
-	// always do this after the initialization in order to guarantee that the device will be properly closed
+    // always do this after the initialization in order to guarantee that the device will be properly closed
     defer gamepad.close()
 
     // press start 
