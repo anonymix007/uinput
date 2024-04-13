@@ -1,4 +1,13 @@
-Uinput [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Build Status](https://github.com/bendahl/uinput/actions/workflows/test.yml/badge.svg) [![codecov](https://codecov.io/gh/bendahl/uinput/branch/master/graph/badge.svg?token=G9UL7846C0)](https://codecov.io/gh/bendahl/uinput) [![PkgGoDev](https://pkg.go.dev/badge/github.com/bendahl/uinput)](https://pkg.go.dev/github.com/bendahl/uinput) [![Go Report Card](https://goreportcard.com/badge/github.com/bendahl/uinput)](https://goreportcard.com/report/github.com/bendahl/uinput)
+# About this fork 
+Added some functions to gamepad.go for trigger force/triggers to work in general otherwise this API is the same
+
+For sake of convenience I taged this release as v1.8.0 to line up with the upstream repo now archived, but consider this repo v0 I might break this API in the future with a v2.0.0
+
+I also modified this readme to remove links to the upstream repo if you want those go to upstream
+
+# Rest of the readme
+
+Uinput [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 ====
 
 This package provides pure go wrapper functions for the LINUX uinput device, which allows to create virtual input devices
@@ -31,20 +40,6 @@ Simply check out the repository and use the commands <pre><code>go build && go i
 The package will then be installed to your local respository, along with the package documentation.
 The documentation contains more details on the usage of this package.
 
-
-Alternatively, if you'd like to use a specific version/tag of this library, you may use the gopkg.in service.
-To get v.1.x.x (latest stable v1), simply enter this on your command line:
-
-<code>go get gopkg.in/bendahl/uinput.v1</code>
-
-To import this version in your code use:
-
-<code>import "gopkg.in/bendahl/uinput.v1"</code>
-
-You may then refer to it as "uinput" in your code. For further details see: https://gopkg.in/bendahl/uinput.v1
-
-Thanks to gopkg.in for offering this great service!
-
 Usage
 -----
 The following section explains some common ways to use this lib.
@@ -55,9 +50,7 @@ The following section explains some common ways to use this lib.
 ```go
 package main
 
-import "github.com/bendahl/uinput"
-// alternatively (to use specific version), use this:
-//import "gopkg.in/bendahl/uinput.v1"
+import "github.com/ThomasT75/uinput"
 
 func main() {
 	// initialize keyboard and check for possible errors
@@ -89,9 +82,7 @@ func main() {
 ```go
 package main
 
-import "github.com/bendahl/uinput"
-// alternatively (to use specific version), use this:
-//import "gopkg.in/bendahl/uinput.v1"
+import "github.com/ThomasT75/uinput"
 
 func main() {
 	// initialize mouse and check for possible errors
@@ -143,9 +134,7 @@ func main() {
 ```go
 package main
 
-import "github.com/bendahl/uinput"
-// alternatively (to use specific version), use this:
-//import "gopkg.in/bendahl/uinput.v1"
+import "github.com/ThomasT75/uinput"
 
 func main() {
 	// initialization of the touch device requires to set the screen boundaries
@@ -177,9 +166,7 @@ func main() {
 ```go
 package main
 
-import "github.com/bendahl/uinput"
-// alternatively (to use specific version), use this:
-//import "gopkg.in/bendahl/uinput.v1"
+import "github.com/ThomasT75/uinput"
 
 func main() {
 	// initialize dial and check for possible errors
@@ -235,6 +222,7 @@ Options to improve compatibility with newer systems are being evaluated. Thanks 
 
 2023-11-22: Release 1.7.0 adds support for multitouch devices! Thanks to @SnoutBug for this addition! See issue #37 for details. 
 
+2024-04-13: Release 1.8.0 adds 2 new functions in gamepad.go for trigger force (one for each trigger) 
 
 TODO
 ----
