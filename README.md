@@ -7,7 +7,7 @@ I also modified this readme to remove links to the upstream repo if you want tho
 
 # Rest of the readme
 
-Uinput [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+Uinput [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![PkgGoDev](https://pkg.go.dev/badge/github.com/ThomasT75/uinput)](https://pkg.go.dev/github.com/ThomasT75/uinput)
 ====
 
 This package provides pure go wrapper functions for the LINUX uinput device, which allows to create virtual input devices
