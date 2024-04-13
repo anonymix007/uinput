@@ -1,7 +1,7 @@
 # About this fork 
-Added some functions to gamepad.go for trigger force/triggers to work in general otherwise this API is the same
+Added some functions to gamepad.go for trigger force/triggers to work in general otherwise this API is the same, in 1.8.0, but i can't guarantee, in 1.8.1, that the result of the API will be the same for the gamepad.go HatFunctions because the implementation was missing the absMin and absMax value for the uinput device I did fix that and tried to copy to original behavior but I can't test it if it will work or not like before
 
-For sake of convenience I taged this release as v1.8.0 to line up with the upstream repo now archived, but consider this repo v0 I might break this API in the future with a v2.0.0
+For sake of convenience I taged this release as v1.8.0+ to line up with the upstream repo now archived, but consider this repo v0 I might break this API in the future with a v2.0.0
 
 I also modified this readme to remove links to the upstream repo if you want those go to upstream
 
@@ -223,6 +223,8 @@ Options to improve compatibility with newer systems are being evaluated. Thanks 
 2023-11-22: Release 1.7.0 adds support for multitouch devices! Thanks to @SnoutBug for this addition! See issue #37 for details. 
 
 2024-04-13: Release 1.8.0 adds 2 new functions in gamepad.go for trigger force (one for each trigger) 
+
+2024-04-13: Release 1.8.1 fix missing absMin and absMax (might break API result but can't test it)
 
 TODO
 ----
