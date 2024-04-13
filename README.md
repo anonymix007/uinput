@@ -129,6 +129,40 @@ func main() {
 }
 ```
 
+### Using the virutal gamepad device:
+
+```go 
+package main
+
+import "github.com/ThomasT75/uinput"
+
+func main() {
+    // initialization of the gamepad device requires a vendor id and a product id
+	gamepad, err := uinput.CreateGamepad("/dev/uinput", []byte("test gamepad"), 0xDEAD, 0xBEEF)
+    if err != nil {
+        return
+    }
+	// always do this after the initialization in order to guarantee that the device will be properly closed
+    defer gamepad.close()
+
+    // press start 
+    gamepad.ButtonPress(uinput.ButtonStart)
+    // hold dpad up then release dpad up
+    gamepad.ButtonDown(uinput.ButtonDpadUp)
+    gamepad.ButtonUp(uinput.ButtonDpadUp)
+    // press right trigger all the way in
+    gamepad.RightTriggerForce(1)
+    // release right trigger
+    gamepad.RightTriggerForce(-1)
+    // move the left stick down
+    gamepad.LeftStickMove(0, 1)
+    // move the right stick to the left
+    gamepad.RightStickMoveX(-1)
+
+    // note: don't use HatPress and HatRelease if you want dpad presses use ButtonDown/Press/Up instead
+}
+```
+
 ### Using the virtual touch pad device:
 
 ```go
