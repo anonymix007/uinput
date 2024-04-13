@@ -302,7 +302,7 @@ func createVGamepadDevice(path string, name []byte, vendor uint16, product uint1
 		absHat0Y,
 	}
 
-  //tell uinput what the minimum/maximum abs value is
+  // tell uinput what the minimum/maximum abs value is
   var absMin [absSize]int32
   absMin[absX] = -MaximumAxisValue
   absMin[absY] = -MaximumAxisValue
@@ -310,8 +310,8 @@ func createVGamepadDevice(path string, name []byte, vendor uint16, product uint1
   absMin[absRX] = -MaximumAxisValue
   absMin[absRY] = -MaximumAxisValue
   absMin[absRZ] = -MaximumAxisValue
-  absMin[absHat0X] = -1
-  absMin[absHat0Y] = -1
+  absMin[absHat0X] = -MaximumAxisValue
+  absMin[absHat0Y] = -MaximumAxisValue
 
   var absMax [absSize]int32
   absMax[absX] = MaximumAxisValue
@@ -320,8 +320,8 @@ func createVGamepadDevice(path string, name []byte, vendor uint16, product uint1
   absMax[absRX] = MaximumAxisValue
   absMax[absRY] = MaximumAxisValue
   absMax[absRZ] = MaximumAxisValue
-  absMax[absHat0X] = 1
-  absMax[absHat0Y] = 1
+  absMax[absHat0X] = MaximumAxisValue
+  absMax[absHat0Y] = MaximumAxisValue
 
 	deviceFile, err := createDeviceFile(path)
 	if err != nil {
