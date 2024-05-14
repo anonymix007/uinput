@@ -7,7 +7,7 @@ import (
 	"syscall"
 )
 
-// A Mouse is a device that will trigger an absolute change event.
+// A Mouse is a device that will trigger a relative change event.
 // For details see: https://www.kernel.org/doc/Documentation/input/event-codes.txt
 type Mouse interface {
 	// MoveLeft will move the mouse cursor left by the given number of pixel.
